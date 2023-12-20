@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "252833940027",
+    "project_id": "employme-da413",
+    "storage_bucket": "employme-da413.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252833940027:android:65548056237e0f4ca1521e",
+        "android_client_info": {
+          "package_name": "com.ask2901.EmployMe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252833940027-ged4stv106aib09c4265a1a4hub0tae8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ask2901.EmployMe",
+            "certificate_hash": "652da91a1c3639691efc2dffefce3ae7f5e69e3d"
+          }
+        },
+        {
+          "client_id": "252833940027-ijbpp139fv3ahgcge8g11osnghbhdven.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ask2901.EmployMe",
+            "certificate_hash": "2c5b8a05508d19d7e54c6df19136fe0d30cd9b04"
+          }
+        },
+        {
+          "client_id": "252833940027-n9rssal9agjjklebgkfvqj996jsib8rp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgcNOuasNtWV05yTWgyxGCtOax5MWkcBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252833940027-n9rssal9agjjklebgkfvqj996jsib8rp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
