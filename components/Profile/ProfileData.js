@@ -2,7 +2,7 @@ import Images from "../../utils/Images";
 
 const Profile = {
   INFO: {
-    name: 'Your Name',
+    name: 'Aryan Kumar',
     company: 'M.I. Solutions',
     profile_picture: Images.PROFILE_PICTURE,
     banner: Images.BANNERS.BANNER7,
@@ -58,7 +58,7 @@ const Profile = {
   EDUCATION: [
     {
       logo: Images.LOGOS.UNIVERSITY,
-      college: 'Your College Name',
+      college: 'National Institute of Technology, Surat',
       name: "Bachelor's Degree, Computer Science",
       time: '2018-2022',
       CGPA: 9.4

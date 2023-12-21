@@ -12,7 +12,7 @@ import SectionHeading from "./SectionHeading/SectionHeading";
 import ShowEducation from "./ShowEducation/ShowEducation";
 import ShowSkill from "./ShowSkill/ShowSkill";
 
-const ProfileScreen = () => {
+const ProfileScreen = ({name}) => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={{ backgroundColor: "#ffff", marginBottom: 10 }}>

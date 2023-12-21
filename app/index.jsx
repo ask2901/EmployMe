@@ -16,20 +16,25 @@ import { Slot} from 'expo-router';
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { useEffect } from "react";
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import CustomDrawer from "../components/CustomDrawer/CustomDrawer";
+import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 
-
-
 function MyDrawer() {
-  const [picUrl, setPicUrl] = useState("");
-  const [name, setName] = useState("");
+  
+  const[itemId,setItemId]=useState('');
 
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator drawerContent={props=><CustomDrawer {...props}/>}
+    screenOptions={{drawerLabelStyle:{marginLeft:-25,fontFamily:'Roboto-medium',fontSize:15,
+    },
+    drawerActiveBackgroundColor:'#aa18ea',
+    drawerActiveTintColor:'#fff',
+    drawerInactiveTintColor:'#333',
+    }}>
       <Drawer.Screen name="Home" component={Home}
         options={{
           headerStyle: { backgroundColor: COLORS.lightWhite },
@@ -37,13 +42,38 @@ function MyDrawer() {
           headerShadowVisible: false,
           headerTitle: " ",
           headerTitle: " ",
+          drawerIcon: ({ focused, size ,color}) => (
+            <Ionicons
+              name="home-outline"
+              size={22}
+              color={color}
+            />
+          ),
         }}
       />
-      <Drawer.Screen name="ProfileScreen" component={ProfileScreen}
+      <Drawer.Screen name="Profile" component={ProfileScreen}
           options={({ route }) => ({
             headerShown:false,
+            drawerIcon: ({ focused, size ,color}) => (
+              <Ionicons
+                name="person-outline"
+                size={22}
+                color={color}
+              />
+            ),
           })}
-        />
+      />
+      <Drawer.Screen name="Messages" component={ChatHome}
+        options={{
+          drawerIcon: ({ focused, size ,color}) => (
+            <Ionicons
+              name="chatbox-ellipses-outline"
+              size={22}
+              color={color}
+            />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 }
@@ -93,7 +123,9 @@ const Main=() => {
         }}
       />
         <Stack.Screen name="MyDrawer" component={MyDrawer} 
-          options={{headerShown:false,}}
+          options={({route})=>({
+            headerShown:false,
+            })}
         />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} 
           options={{headerShown:false,}}
@@ -103,7 +135,6 @@ const Main=() => {
             title: route.params.name,
           })}
         />
-        
         <Stack.Screen name="ChatHome" component={ChatHome}
           options={{
             title: '',
