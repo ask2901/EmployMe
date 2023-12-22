@@ -40,6 +40,13 @@
 
 <a href="https://expo.dev/accounts/ask2901/projects/EmployMe/builds/43493da9-6624-48dc-a3da-b2632088b977">Employe Me</a>
 
+## Tech Stack 
+
+- React Native
+- FireBase
+- Expo
+- Redux
+
 ## Screenshots
   
 - ## Android
