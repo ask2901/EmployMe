@@ -36,6 +36,10 @@
   - Sign in to expo and the project will appear in the app.
   - Or point your phone's camera at the QR code in the terminal (press "c" to view it).
 
+## Download APK File
+
+<a href="https://expo.dev/accounts/ask2901/projects/EmployMe/builds/43493da9-6624-48dc-a3da-b2632088b977">Employe Me</a>
+
 ## Screenshots
   
 - ## Android
