@@ -11,14 +11,14 @@
 
 ## Features
 
-•React Native Android/IOS application using Expo offering a One-stop solution for tech job seekers\
-•Utilized Formik to create and manage forms for capturing and processing user data.\
-•Implemented Google Sign-In functionality, along with JWT-based authentication.\
-•Leveraged Firebase Realtime Database to build chat platform, enhancing collaboration and communication.\
-•Used Firebase a Backend-as-a-Service (BaaS) platform for authentication, database, and storage.\
-•Utilized AsyncStorage to implement a seamless one-time sign-in feature, enhancing user convenience\
-•Integrated the Jsearch API from Rapid API into the app, utilizing Axios for data retrieval.\
-•Features a fully functional Job search functionality, enabling users to find and apply for tech jobs easily\
+-React Native Android/IOS application using Expo offering a One-stop solution for tech job seekers\
+-Utilized Formik to create and manage forms for capturing and processing user data.\
+-Implemented Google Sign-In functionality, along with JWT-based authentication.\
+-Leveraged Firebase Realtime Database to build chat platform, enhancing collaboration and communication.\
+-Used Firebase a Backend-as-a-Service (BaaS) platform for authentication, database, and storage.\
+-Utilized AsyncStorage to implement a seamless one-time sign-in feature, enhancing user convenience\
+-Integrated the Jsearch API from Rapid API into the app, utilizing Axios for data retrieval.\
+-Features a fully functional Job search functionality, enabling users to find and apply for tech jobs easily\
 
 ## Usage
 
