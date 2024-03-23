@@ -24,6 +24,8 @@ import ForgotPassword from "./ForgotPassword/ForgotPassword";
 import ProfileScreen from "./Profile/ProfileScreen";
 import Heading from "./Profile/Heading/Heading";
 import CustomIcon from "./Profile/CustomIcon/CustomIcon";
+import MeetingRoom from "./VideoConference/MeetingRoom";
+import Room from "./VideoConference/room/[id]";
 
 export {
   ScreenHeaderBtn,
@@ -46,4 +48,6 @@ export {
   ProfileScreen,
   Heading,
   CustomIcon,
+  MeetingRoom,
+  Room,
 };

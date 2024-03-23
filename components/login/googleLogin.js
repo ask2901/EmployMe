@@ -49,7 +49,7 @@ const GoogleLogin = ({ isSignedIn, setIsSignedIn, user, setUser}) => {
     const user_sign_in = auth().signInWithCredential(googleCredential);
     user_sign_in
       .then((user) => {
-        console.log("User info", user);
+        // console.log("User info", idToken);
         // if(user.additionalUserInfo.isNewUser==true)
         // {
           firestore()

@@ -26,13 +26,15 @@ import { Formik } from "formik";
 import { Fontisto, Ionicons, Octicons } from "@expo/vector-icons";
 import { useState } from "react";
 import { router, useRouter } from "expo-router";
-import { auth } from "../../FireBaseConfig";
-import { signInWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "../../FireBaseConfig";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { GoogleLogin, Home } from "../../components";
 import { ScrollView } from "react-native-gesture-handler";
 const { primary, brand, darkLight } = Colors;
 import { COLORS, icons, images, SIZES } from "../../constants";
-import ForgotPassword from './../ForgotPassword/ForgotPassword';
+import ForgotPassword from "./../ForgotPassword/ForgotPassword";
+import auth from "@react-native-firebase/auth";
+import firestore from "@react-native-firebase/firestore";
 
 const Login = ({ navigation }) => {
   const router = useRouter();
@@ -46,7 +48,7 @@ const Login = ({ navigation }) => {
     navigation.navigate("Signup");
   };
 
-  goToForgotPassword = () => navigation.navigate('ForgotPassword')
+  goToForgotPassword = () => navigation.navigate("ForgotPassword");
 
   const TextInput = ({ label, icon, hidePassword, setHidePassword, isPassword, ...props }) => {
     return (
@@ -81,18 +83,47 @@ const Login = ({ navigation }) => {
             initialValues={{ email: "", password: "" }}
             onSubmit={(values) => {
               const signin = async () => {
-                try {
-                  const response = await signInWithEmailAndPassword(auth, values.email, values.password);
-                  // console.log(response);
-                  // router.push("/home");
-                  // navigation.navigate("Home", { itemId: response.user.uid });
-                  navigation.navigate("MyDrawer", {
-                    screen: "Home",
-                    params: { itemId: response.user.uid },
+                
+                auth()
+                  .createUserWithEmailAndPassword(values.email, values.password)
+                  .then((user) => {
+                    console.log("User account created & signed in!");
+                    console.log("User info", user);
+                    
+                    firestore()
+                      .collection("users")
+                      .doc(user.user.uid)
+                      .set({
+                        name: user.user.displayName?user.user.displayName:"",
+                        email: user.user.email,
+                        uid: user.user.uid,
+                        picture: user.user.photoURL?user.user.photoURL:"",
+                      })
+                      .then(() => {
+                        console.log("User added!");
+                        navigation.navigate("MyDrawer", {
+                          screen: "Home",
+                          params: { itemId: user.user.uid, picUrl: user.user.photoURL },
+                        });
+                      })
+                      .catch((error) => {
+                        console.log("Something went wrong with added user to firestore: ", error);
+                      });
+                  })
+                  .catch((error) => {
+                    if (error.code === "auth/email-already-in-use") {
+                      console.log(values.email, values.password);
+                      console.log(user);
+                      navigation.navigate("MyDrawer", {
+                        screen: "Home",
+                        params: { itemId: user.uid, picUrl: user.photoURL },
+                      });
+                    }
+
+                    if (error.code === "auth/invalid-email") {
+                      console.log("That email address is invalid!");
+                    }
                   });
-                } catch (error) {
-                  alert(error);
-                }
               };
               signin();
             }}
@@ -122,7 +153,7 @@ const Login = ({ navigation }) => {
                   hidePassword={hidePassword}
                   setHidePassword={setHidePassword}
                 />
-                
+
                 <StyledButton onPress={handleSubmit}>
                   <ButtonText>Login</ButtonText>
                 </StyledButton>
@@ -141,7 +172,6 @@ const Login = ({ navigation }) => {
                     <TextLinkContent>Forgot Password?</TextLinkContent>
                   </TextLink>
                 </ExtraView>
-
               </StyledFormArea>
             )}
           </Formik>

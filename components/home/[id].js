@@ -9,9 +9,8 @@ import { Icon } from '@rneui/themed';
 import { COLORS, icons, images, SIZES } from "../../constants";
 import {Login, Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome } from "../../components";
 
-
-
 const Home = ({route,navigation}) => {
+
   const {itemId,picUrl} = route.params;
   const router = useRouter();
   const [name, setName] = useState("");
@@ -72,10 +71,10 @@ const Home = ({route,navigation}) => {
             name={name}
             handleClick={() => {
               if (searchTerm) {
-                // router.push(`/search/${searchTerm}`);
-                navigation.navigate("search", {
-                  searchTerm: {searchTerm},
-                });
+                router.push(`/search/${searchTerm}`);
+                // navigation.navigate("search", {
+                //   searchTerm: {searchTerm},
+                // });
               }
             }}
           />
