@@ -20,11 +20,12 @@
     },
     "android": {
       "googleServicesFile": "./google-services.json",
+      "package": "com.ask2901.EmployMe",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.ask2901.EmployMe"
+      }
+      
     },
     "web": {
       "bundler": "metro",

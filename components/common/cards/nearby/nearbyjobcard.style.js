@@ -13,18 +13,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     ...SHADOWS.medium,
     shadowColor: COLORS.white,
+    gap:3
   },
   logoContainer: {
-    width: 50,
-    height: 50,
+    width: 110,
+    height: 90,
     backgroundColor: COLORS.white,
     borderRadius: SIZES.medium,
     justifyContent: "center",
     alignItems: "center",
   },
   logoImage: {
-    width: "70%",
-    height: "70%",
+    width: "90%",
+    height: "90%",
   },
   textContainer: {
     flex: 1,

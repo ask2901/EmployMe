@@ -3,10 +3,10 @@ import React, { useCallback } from "react";
 import { useState } from "react";
 import { SplashScreen, useRouter } from "expo-router";
 import { useFonts } from "expo-font";
-import ScreenHeaderBtn, { ChatScreen, ChatHome, ForgotPassword, ProfileScreen } from "../components";
+import ScreenHeaderBtn, { ForgotPassword, ProfileScreen } from "../components";
 
 import { COLORS, icons, images, SIZES } from "../constants";
-import { Login, Signup, Home, MeetingRoom, Room } from "../components";
+import { Login, Signup, Home, MeetingRoom, Room, AddItem, DeleteItem,EditItem } from "../components";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -47,18 +47,35 @@ function MyDrawer() {
           drawerIcon: ({ focused, size, color }) => <Ionicons name="home-outline" size={22} color={color} />,
         }}
       />
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name="Profile"
         component={ProfileScreen}
         options={({ route }) => ({
           headerShown: false,
           drawerIcon: ({ focused, size, color }) => <Ionicons name="person-outline" size={22} color={color} />,
         })}
+      /> */}
+      <Drawer.Screen
+        name="Add Item"
+        component={AddItem}
+        options={{
+          headerShown: false,
+          drawerIcon: ({ focused, size, color }) => <Ionicons name="chatbox-ellipses-outline" size={22} color={color} />,
+        }}
       />
       <Drawer.Screen
-        name="Messages"
-        component={ChatHome}
+        name="Delete Item"
+        component={DeleteItem}
         options={{
+          headerShown: false,
+          drawerIcon: ({ focused, size, color }) => <Ionicons name="chatbox-ellipses-outline" size={22} color={color} />,
+        }}
+      />
+      <Drawer.Screen
+        name="Edit Item"
+        component={EditItem}
+        options={{
+          headerShown: false,
           drawerIcon: ({ focused, size, color }) => <Ionicons name="chatbox-ellipses-outline" size={22} color={color} />,
         }}
       />
@@ -123,7 +140,7 @@ const Main = () => {
           })}
         />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: false }} />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="ChatScreen"
           component={ChatScreen}
           options={({ route }) => ({
@@ -137,7 +154,7 @@ const Main = () => {
             title: "",
             headerRight: () => <Icon name="user-circle-o" size={30} />,
           }}
-        />
+        /> */}
         <Stack.Screen
           name="MeetingRooms"
           component={MeetingRoom}
@@ -148,7 +165,6 @@ const Main = () => {
             //     <Ionicons name="log-out-outline" size={30} />
             //   </TouchableOpacity>
             // ),
-            
           }}
         />
 

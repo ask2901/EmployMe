@@ -77,8 +77,8 @@ const Login = ({ navigation }) => {
       <StyledContainer>
         <StatusBar style="dark" />
         <InnerContainer>
-          <PageLogo resizeMode="cover" source={require("../../assets/images/Logo.png")} />
-          <SubTitle>Account Login</SubTitle>
+          <PageLogo resizeMode="cover" source={require("../../assets/ZORKO.jpg")} />
+          <SubTitle>Admin Login</SubTitle>
           <Formik
             initialValues={{ email: "", password: "" }}
             onSubmit={(values) => {

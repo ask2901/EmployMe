@@ -22,7 +22,7 @@ const Welcome = ({searchTerm,setSearchTerm,handleClick,name}) => {
     <View>
       <View style={styles.container}>
         <Text style={styles.userName}>Hello {name}</Text>
-        <Text style={styles.welcomeMessage}>Find your Perfect Job</Text>
+        <Text style={styles.welcomeMessage}>Admin</Text>
       </View>
 
       <View style={styles.searchContainer}>
@@ -34,7 +34,7 @@ const Welcome = ({searchTerm,setSearchTerm,handleClick,name}) => {
           <Image source={icons.search} resizeMode="contain" style={styles.searchBtnImage} />
         </TouchableOpacity>
       </View>
-      <View style={styles.tabsContainer}>
+      {/* <View style={styles.tabsContainer}>
         <FlatList
           data={jobTypes}
           renderItem={({ item }) => (
@@ -53,7 +53,7 @@ const Welcome = ({searchTerm,setSearchTerm,handleClick,name}) => {
           contentContainerStyle={{ columnGap: SIZES.small }}
           horizontal
         />
-      </View>
+      </View> */}
     </View>
   );
 };

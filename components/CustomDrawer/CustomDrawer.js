@@ -26,7 +26,7 @@ const CustomDrawer = (props) => {
           />
           <Text style={{ color: "#fff", fontSize: 18, fontFamily: "Roboto-Medium", marginBottom: 5 }}>Aryan Kumar</Text>
           <View style={{ flexDirection: "row", gap: 5, alignItems: "baseline" }}>
-            <Text style={{ color: "#fff", fontFamily: "Roboto-Regular" }}>280 Followers</Text>
+            <Text style={{ color: "#fff", fontFamily: "Roboto-Regular" }}>Admin ZORKO Foods</Text>
             <FontAwesome name="user-o" size={14} color="#fff" />
           </View>
         </ImageBackground>

@@ -32,9 +32,8 @@ export const InnerContainer = styled.View`
 `;
 
 export const PageLogo = styled.Image`
-    width:160px;
-    height:160px;
-    margin-bottom:20px;
+    width:250px;
+    height:200px;
 `
 export const PageTitle = styled.Text`
     font-size:30px;
@@ -88,12 +87,29 @@ export const RightIcon = styled.TouchableOpacity`
 
 export const StyledButton = styled.TouchableOpacity`
     padding:15px;
-    background-color:#4169E1;
+    background-color:${brand};
     justify-content:center;
     align-items:center;
     border-radius:5px;
     margin-vertical:5px;
     height:60px;
+
+    ${(props)=>props.google==true && `
+        background-color:${grey};
+        flex-direction:row;
+        justify-content:center;
+    `}
+
+`;
+
+export const StyledButton_Image = styled.TouchableOpacity`
+    padding:15px;
+    background-color:#E5E4E2;
+    justify-content:center;
+    align-items:center;
+    border-radius:5px;
+    height:60px;
+    marginBottom:10px
 
     ${(props)=>props.google==true && `
         background-color:${green};
@@ -103,8 +119,19 @@ export const StyledButton = styled.TouchableOpacity`
 
 `;
 
+
 export const ButtonText=styled.Text`
     color:${primary};
+    font-size:16px;
+
+    ${(props)=>props.google==true && `
+        padding : 25px;
+        padding-top:0px;
+        padding-bottom:0px;
+    `}
+`;
+export const ButtonText_Image=styled.Text`
+    color:#818589;
     font-size:16px;
 
     ${(props)=>props.google==true && `

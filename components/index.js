@@ -15,17 +15,18 @@ import Specifics from "./jobdetails/specifics/Specifics";
 // common
 import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
 import Login from "./login/Login";
-import Signup from './signup/Signup';
-import GoogleLogin from './login/googleLogin';
+import Signup from "./signup/Signup";
+import GoogleLogin from "./login/googleLogin";
 import Home from "./home/[id]";
-import ChatScreen from "./Chat/ChatScreen";
-import ChatHome from "./Chat/chatHome";
 import ForgotPassword from "./ForgotPassword/ForgotPassword";
 import ProfileScreen from "./Profile/ProfileScreen";
 import Heading from "./Profile/Heading/Heading";
 import CustomIcon from "./Profile/CustomIcon/CustomIcon";
 import MeetingRoom from "./VideoConference/MeetingRoom";
 import Room from "./VideoConference/room/[id]";
+import AddItem from "./Menu/AddItem";
+import DeleteItem from "./Menu/DeleteItem";
+import EditItem from './Menu/EditItem';
 
 export {
   ScreenHeaderBtn,
@@ -42,12 +43,13 @@ export {
   Signup,
   GoogleLogin,
   Home,
-  ChatScreen,
-  ChatHome,
+  AddItem,
   ForgotPassword,
   ProfileScreen,
   Heading,
   CustomIcon,
   MeetingRoom,
   Room,
+  EditItem,
+  DeleteItem,
 };

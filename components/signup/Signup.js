@@ -96,8 +96,8 @@ const Signup = ({route,navigation}) => {
     <StyledContainer>
       <StatusBar style="dark" />
       <InnerContainer>
-        <SubTitle>Account Signup</SubTitle>
-
+        <SubTitle>Admin Signup</SubTitle>
+        
         {show && <DateTimePicker testID="dateTimePicker" value={date} mode="date" is24Hour={true} onChange={onChange}/>}
 
         <Formik
